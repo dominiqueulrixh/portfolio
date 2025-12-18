@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import { Home } from './Home';
 import { Projects } from './Projects';
 import { Story } from './Story';
@@ -15,8 +16,21 @@ interface MainContentProps {
 }
 
 export function MainContent({ onProjectSelect, activeTab, setActiveTab }: MainContentProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Switch to mobile nav a bit früher, bevor Logo/Tabs umbrechen
+    const mediaQuery = window.matchMedia('(max-width: 1023px)');
+    const handleChange = () => setIsMobile(mediaQuery.matches);
+    handleChange();
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   const handleNavigate = (tab: 'story' | 'projects') => {
     setActiveTab(tab);
+    setIsMenuOpen(false);
   };
 
   return (
@@ -39,50 +53,116 @@ export function MainContent({ onProjectSelect, activeTab, setActiveTab }: MainCo
               </span>
             </button>
 
-            <nav className="flex gap-2">
+            {!isMobile && (
+              <nav className="flex gap-2">
+                <button
+                  onClick={() => setActiveTab('home')}
+                  className={`px-6 py-2 rounded-full transition-all ${
+                    activeTab === 'home'
+                      ? 'bg-warm-olive text-white'
+                      : 'text-warm-text/70 hover:bg-warm-medium/20'
+                  }`}
+                >
+                  Über mich
+                </button>
+                <button
+                  onClick={() => handleNavigate('projects')}
+                  className={`px-6 py-2 rounded-full transition-all ${
+                    activeTab === 'projects'
+                      ? 'bg-warm-olive text-white'
+                      : 'text-warm-text/70 hover:bg-warm-medium/20'
+                  }`}
+                >
+                  Projekte
+                </button>
+                <button
+                  onClick={() => handleNavigate('story')}
+                  className={`px-6 py-2 rounded-full transition-all ${
+                    activeTab === 'story'
+                      ? 'bg-warm-olive text-white'
+                      : 'text-warm-text/70 hover:bg-warm-medium/20'
+                  }`}
+                >
+                  Story
+                </button>
+                <button
+                  onClick={() => setActiveTab('contact')}
+                  className={`px-6 py-2 rounded-full transition-all ${
+                    activeTab === 'contact'
+                      ? 'bg-warm-olive text-white'
+                      : 'text-warm-text/70 hover:bg-warm-medium/20'
+                  }`}
+                >
+                  Kontakt
+                </button>
+              </nav>
+            )}
+
+            {isMobile && (
               <button
-                onClick={() => setActiveTab('home')}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  activeTab === 'home'
-                    ? 'bg-warm-olive text-white'
-                    : 'text-warm-text/70 hover:bg-warm-medium/20'
-                }`}
+                className="p-3 rounded-full text-warm-text/80 hover:bg-warm-medium/10 transition-colors"
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+                aria-expanded={isMenuOpen}
+                aria-label="Navigation öffnen"
               >
-                Über mich
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
-              <button
-                onClick={() => handleNavigate('projects')}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  activeTab === 'projects'
-                    ? 'bg-warm-olive text-white'
-                    : 'text-warm-text/70 hover:bg-warm-medium/20'
-                }`}
-              >
-                Projekte
-              </button>
-              <button
-                onClick={() => handleNavigate('story')}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  activeTab === 'story'
-                    ? 'bg-warm-olive text-white'
-                    : 'text-warm-text/70 hover:bg-warm-medium/20'
-                }`}
-              >
-                Story
-              </button>
-              <button
-                onClick={() => setActiveTab('contact')}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  activeTab === 'contact'
-                    ? 'bg-warm-olive text-white'
-                    : 'text-warm-text/70 hover:bg-warm-medium/20'
-                }`}
-              >
-                Kontakt
-              </button>
-            </nav>
+            )}
 
           </div>
+
+          {isMobile && isMenuOpen && (
+            <div className="mt-4 bg-warm-light/95 backdrop-blur-lg border border-warm-medium/20 rounded-2xl p-3 shadow-lg">
+              <div className="flex flex-col gap-2">
+                <button
+                  onClick={() => {
+                    setActiveTab('home');
+                    setIsMenuOpen(false);
+                  }}
+                  className={`w-full text-center px-5 py-3 rounded-full transition-all ${
+                    activeTab === 'home'
+                      ? 'bg-warm-olive text-white'
+                      : 'text-warm-text/70 hover:bg-warm-medium/20'
+                  }`}
+                >
+                  Über mich
+                </button>
+                <button
+                  onClick={() => handleNavigate('projects')}
+                  className={`w-full text-center px-5 py-3 rounded-full transition-all ${
+                    activeTab === 'projects'
+                      ? 'bg-warm-olive text-white'
+                      : 'text-warm-text/70 hover:bg-warm-medium/20'
+                  }`}
+                >
+                  Projekte
+                </button>
+                <button
+                  onClick={() => handleNavigate('story')}
+                  className={`w-full text-center px-5 py-3 rounded-full transition-all ${
+                    activeTab === 'story'
+                      ? 'bg-warm-olive text-white'
+                      : 'text-warm-text/70 hover:bg-warm-medium/20'
+                  }`}
+                >
+                  Story
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveTab('contact');
+                    setIsMenuOpen(false);
+                  }}
+                  className={`w-full text-center px-5 py-3 rounded-full transition-all ${
+                    activeTab === 'contact'
+                      ? 'bg-warm-olive text-white'
+                      : 'text-warm-text/70 hover:bg-warm-medium/20'
+                  }`}
+                >
+                  Kontakt
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </header>
 
