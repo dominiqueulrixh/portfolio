@@ -28,6 +28,11 @@ export function MainContent({ onProjectSelect, activeTab, setActiveTab }: MainCo
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
+  useEffect(() => {
+    // Nach Tab-Wechsel immer nach oben scrollen
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [activeTab]);
+
   const handleNavigate = (tab: 'story' | 'projects') => {
     setActiveTab(tab);
     setIsMenuOpen(false);
