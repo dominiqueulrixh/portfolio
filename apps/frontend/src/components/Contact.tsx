@@ -33,8 +33,8 @@ export function Contact() {
           </div>
 
           <a
-            href="https://linkedin.com/in/ihr-profil"
-            target="_blank"
+            href="https://www.linkedin.com/in/dominique-ulrich-a103771ab"
+            target="dominiqueulrich"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 bg-warm-medium/10 rounded-2xl hover:bg-warm-medium/20 transition-colors group"
           >
