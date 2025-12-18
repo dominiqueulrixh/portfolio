@@ -33,7 +33,7 @@ export function Footer() {
           </a>
 
           <a
-            href="mailto:dominique.ulrich@example.com"
+            href="mailto:mail@dominiqueulrich.ch"
             className="flex items-center gap-2 text-warm-text/70 hover:text-warm-olive transition-colors group"
           >
             <div className="w-10 h-10 bg-warm-olive/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
