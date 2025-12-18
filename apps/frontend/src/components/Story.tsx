@@ -51,8 +51,8 @@ export function Story() {
                     </div>
                     <div className="space-y-1">
                       <p className="text-warm-text font-semibold text-lg">Kauffrau EFZ</p>
-                      <p className="text-sm text-warm-text/60">Rapperswil SG</p>
-                      <p className="text-xs text-warm-text/50">Abschluss 2017</p>
+                      <p className="text-sm text-warm-text/60">BWZ · Rapperswil SG</p>
+                      <p className="text-xs text-warm-text/50">Abschluss 2020</p>
                     </div>
                   </div>
                 </div>
@@ -64,8 +64,8 @@ export function Story() {
                     </div>
                     <div className="space-y-1">
                       <p className="text-warm-text font-semibold text-lg">Kaufmännische BM</p>
-                      <p className="text-sm text-warm-text/60">Rapperswil SG</p>
-                      <p className="text-xs text-warm-text/50">Abschluss 2017</p>
+                      <p className="text-sm text-warm-text/60">BWZ · Rapperswil SG</p>
+                      <p className="text-xs text-warm-text/50">Abschluss 2020</p>
                     </div>
                   </div>
                 </div>
@@ -76,9 +76,9 @@ export function Story() {
                       <img src={Auszeichnung} alt="Auszeichnung" className="w-[52px] h-[52px] object-contain" />
                     </div>
                     <div className="space-y-1">
-                      <p className="text-warm-text font-semibold text-lg">Bachelor Wirtschaftsinformatik</p>
-                      <p className="text-sm text-warm-text/60">Vertiefung Data Science · Winterthur</p>
-                      <p className="text-xs text-warm-text/50">Abschluss 2020</p>
+                      <p className="text-warm-text font-semibold text-lg">Bachelor Wirtschaftsinformatik - Vertiefung Data Science</p>
+                      <p className="text-sm text-warm-text/60">ZHAW · Winterthur</p>
+                      <p className="text-xs text-warm-text/50">Abschluss 2025</p>
                     </div>
                   </div>
                 </div>
@@ -114,9 +114,9 @@ export function Story() {
                       <img src={Auszeichnung} alt="Auszeichnung" className="w-[52px] h-[52px] object-contain" />
                     </div>
                     <div className="space-y-1">
-                      <p className="text-warm-text font-semibold text-lg">Bachelor Wirtschaftsinformatik</p>
-                      <p className="text-sm text-warm-text/60">Vertiefung Data Science · Winterthur</p>
-                      <p className="text-xs text-warm-text/50">Abschluss 2024</p>
+                      <p className="text-warm-text font-semibold text-lg">Bachelor Wirtschaftsinformatik - Vertiefung Data Science</p>
+                      <p className="text-sm text-warm-text/60">ZHAW · Winterthur</p>
+                      <p className="text-xs text-warm-text/50">Abschluss 2025</p>
                     </div>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export function Story() {
                     <div className="space-y-1">
                       <p className="text-warm-text font-semibold text-lg">Master User Experience Design</p>
                       <p className="text-sm text-warm-text/60">FHGR · Chur</p>
-                      <p className="text-xs text-warm-text/50">Laufend · seit 2024</p>
+                      <p className="text-xs text-warm-text/50">Laufend · seit 2025</p>
                     </div>
                   </div>
                 </div>

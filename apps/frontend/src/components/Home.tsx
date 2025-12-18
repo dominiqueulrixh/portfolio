@@ -11,7 +11,7 @@ interface HomeProps {
 
 export function Home({ onNavigate }: HomeProps) {
   const hobbies = [
-    { icon: KaffeeIcon, label: 'Kaffee-Liebhaber', color: 'from-warm-accent to-amber-600' },
+    { icon: KaffeeIcon, label: 'Kaffee-Liebhaberin', color: 'from-warm-accent to-amber-600' },
     { icon: BadmintonIcon, label: 'Badminton', color: 'from-warm-dark to-slate-600' },
     { icon: BuchIcon, label: 'Lesen', color: 'from-warm-accent to-warm-olive' },
     { icon: ControllerIcon, label: 'Spiele in Gesellschaft', color: 'from-warm-olive to-teal-600' },
