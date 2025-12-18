@@ -130,9 +130,4 @@ build
 .strapi-updater.json
 .strapi-cloud.json
 
-apps/backend/node_modules/*
-apps/frontend/node_modules/*
-
-.env.dev
-.env.local
-.env.production
+node_modules/*
