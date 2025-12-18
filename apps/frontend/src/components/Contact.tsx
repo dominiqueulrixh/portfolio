@@ -5,9 +5,9 @@ export function Contact() {
     <div className="max-w-4xl mx-auto space-y-12">
       <div className="text-center">
         <div className="flex items-center justify-center gap-4 mb-6">
-          <div className="h-px flex-1 bg-warm-medium/30"></div>
+          <div className="h-px w-16 bg-warm-medium/30"></div>
           <h1 className="text-warm-text tracking-wide font-light">Kontakt</h1>
-          <div className="h-px flex-1 bg-warm-medium/30"></div>
+          <div className="h-px w-16 bg-warm-medium/30"></div>
         </div>
         <p className="text-warm-text/70 text-lg leading-relaxed max-w-2xl mx-auto">
           Hast du Fragen zu meiner Arbeit oder möchtest du mehr erfahren?

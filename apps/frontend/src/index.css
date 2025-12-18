@@ -126,6 +126,7 @@
     --color-warm-accent: #2d5f5d; /* teal as primary accent */
     --color-warm-olive: #3f7876; /* teal-light for secondary accents */
   }
+
 }
 
 @layer base {

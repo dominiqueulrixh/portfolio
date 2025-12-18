@@ -1,6 +1,9 @@
-import { Coffee, Music, Gamepad2, BookOpen, Trophy } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import Portrait from '../assets/Portrait.jpg';
+import KaffeeIcon from '../assets/kaffee.png';
+import BadmintonIcon from '../assets/badminton.png';
+import BuchIcon from '../assets/buch.png';
+import ControllerIcon from '../assets/Controller.png';
 
 interface HomeProps {
   onNavigate?: (tab: 'story' | 'projects') => void;
@@ -8,11 +11,10 @@ interface HomeProps {
 
 export function Home({ onNavigate }: HomeProps) {
   const hobbies = [
-    { icon: Coffee, label: 'Kaffee-Liebhaber', color: 'from-warm-accent to-amber-600' },
-    { icon: Music, label: 'Musik', color: 'from-warm-olive to-green-600' },
-    { icon: Trophy, label: 'Badminton', color: 'from-warm-dark to-slate-600' },
-    { icon: BookOpen, label: 'Lesen', color: 'from-warm-accent to-warm-olive' },
-    { icon: Gamepad2, label: 'Spiele in Gesellschaft', color: 'from-warm-olive to-teal-600' },
+    { icon: KaffeeIcon, label: 'Kaffee-Liebhaber', color: 'from-warm-accent to-amber-600' },
+    { icon: BadmintonIcon, label: 'Badminton', color: 'from-warm-dark to-slate-600' },
+    { icon: BuchIcon, label: 'Lesen', color: 'from-warm-accent to-warm-olive' },
+    { icon: ControllerIcon, label: 'Spiele in Gesellschaft', color: 'from-warm-olive to-teal-600' },
   ];
 
   return (
@@ -67,18 +69,15 @@ export function Home({ onNavigate }: HomeProps) {
           <div className="h-px flex-1 bg-warm-medium/30"></div>
         </div>
 
-        <div className="grid grid-cols-5 gap-4">
-          {hobbies.map((hobby, index) => {
-            const Icon = hobby.icon;
-            return (
-              <div key={index} className="flex flex-col items-center gap-2 group">
-                <div className="w-16 h-16 bg-warm-olive/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
-                  <Icon className="w-6 h-6 text-warm-olive" />
-                </div>
-                <p className="text-warm-text/70 text-sm text-center">{hobby.label}</p>
+        <div className="flex flex-wrap md:flex-nowrap justify-between gap-6 md:gap-10 w-full">
+          {hobbies.map((hobby, index) => (
+            <div key={index} className="flex flex-col items-center gap-2 group">
+              <div className="w-20 h-20 bg-warm-olive/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <img src={hobby.icon} alt={hobby.label} className="w-[52px] h-[52px] object-contain" />
               </div>
-            );
-          })}
+              <p className="text-warm-text/70 text-sm text-center">{hobby.label}</p>
+            </div>
+          ))}
         </div>
       </div>
 

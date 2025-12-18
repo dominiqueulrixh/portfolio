@@ -3,7 +3,6 @@ import { Home } from './Home';
 import { Projects } from './Projects';
 import { Story } from './Story';
 import { Contact } from './Contact';
-import { CorporateDesign } from './CorporateDesign';
 import { Footer } from './Footer';
 import type { Project } from '../App';
 
@@ -21,11 +20,11 @@ export function MainContent({ onProjectSelect, activeTab, setActiveTab }: MainCo
   };
 
   return (
-    <div className="min-h-screen bg-warm-light">
+    <div className="min-h-screen bg-warm-light text-warm-text">
       {/* Header with Navigation */}
       <header className="sticky top-0 z-40 bg-warm-light/95 backdrop-blur-lg border-b border-warm-medium/20">
         <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-6">
             <button
               onClick={() => setActiveTab('home')}
               className="flex items-center gap-3 group"
@@ -81,17 +80,8 @@ export function MainContent({ onProjectSelect, activeTab, setActiveTab }: MainCo
               >
                 Kontakt
               </button>
-              <button
-                onClick={() => setActiveTab('design')}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  activeTab === 'design'
-                    ? 'bg-warm-olive text-white'
-                    : 'text-warm-text/70 hover:bg-warm-medium/20'
-                }`}
-              >
-                Corporate Design
-              </button>
             </nav>
+
           </div>
         </div>
       </header>
@@ -102,7 +92,6 @@ export function MainContent({ onProjectSelect, activeTab, setActiveTab }: MainCo
         {activeTab === 'story' && <Story />}
         {activeTab === 'projects' && <Projects onProjectSelect={onProjectSelect} />}
         {activeTab === 'contact' && <Contact />}
-        {activeTab === 'design' && <CorporateDesign />}
       </main>
 
       {/* Footer */}

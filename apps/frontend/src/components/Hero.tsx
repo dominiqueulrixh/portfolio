@@ -18,9 +18,6 @@ export function Hero({ onContinue }: HeroProps) {
               className="w-full h-full object-cover"
             />
           </div>
-          {/* Decorative blur elements */}
-          <div className="absolute -top-6 -right-6 w-32 h-32 bg-warm-accent/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-warm-olive/20 rounded-full blur-3xl"></div>
         </div>
 
         {/* Title */}

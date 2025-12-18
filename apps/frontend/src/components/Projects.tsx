@@ -102,7 +102,7 @@ export function Projects({ onProjectSelect }: ProjectsProps) {
       );
 
   return (
-    <div className="space-y-16 max-w-6xl mx-auto">
+    <div className="space-y-16 max-w-5xl mx-auto">
       {/* Header Section with Featured Project */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
