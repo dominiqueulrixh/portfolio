@@ -14,8 +14,8 @@ export function Story() {
           </div>
           <div className="space-y-4 text-warm-text/70 text-lg leading-relaxed max-w-3xl mx-auto">
             <p>
-              Von Business über Technology zu Design – eine Reise durch drei Welten,
-              die sich zu einem ganzheitlichen Verständnis digitaler Produkte vereinen.
+              Mein beruflicher Weg führte mich vom kaufmännischen Alltag über die Softwareentwicklung bis hin zum User Experience Design.
+              Drei Perspektiven, die heute mein Verständnis für digitale Produkte prägen.
             </p>
           </div>
         </div>

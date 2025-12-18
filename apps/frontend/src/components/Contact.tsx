@@ -24,10 +24,10 @@ export function Contact() {
             <div className="flex-1 min-w-0">
               <div className="text-warm-text/60 mb-1">E-Mail</div>
               <a 
-                href="mailto:ihre.email@example.com"
+                href="mailto:mail@dominiqueulrich.ch"
                 className="text-warm-text hover:text-warm-olive transition-colors break-all"
               >
-                ihre.email@example.com
+                mail@dominiqueulrich.ch
               </a>
             </div>
           </div>
